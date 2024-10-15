@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>My Todo-List</title>
+<style>
+body {
+    background-color: #9197AE;
+
+}
+
+h1{
+    align-content: center;
+    color: goldenrod;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+ul{
+    color: orangered;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+    <script>
+    function addTask(event){
+        event.preventDefault();
+        const input = document.getElementById("task");
+        const newTask = input.value.trim();
+
+                if (newTask) {
+                    const li = document.createElement("li");
+                    li.textContent = newTask;
+                    document.getElementById("todo-list").appendChild(li);
+                }
+    }
+</script>
+
+    <h1>My Todo-List</h1>
+
+    <form id="todo-input">
+        <label for="task">Add Task:</label>
+        <input type="text" id="task" name="task" required><br><br>
+        <input type="submit" id="submit" value="Add Task">
+    </form> 
+
+      <script>
+      document.getElementById("todo-input").addEventListener("submit", addTask);
+</script>
+
+<ul id="todo-list">
+</ul> 
+
+</body>
+</html>
